@@ -1,0 +1,24 @@
+<div class="tacos-container">
+	<div class="row">
+		<div class="large-6 columns">
+			<div class="title">Select Taco to Find:</div>
+			<% @tacos.each do |taco| %>
+				<div>
+					<input type="checkbox" name=<%= taco.name %> value=<%= taco.name %>><label for="pokemonRed"><%= taco.name %></label>
+				</div>
+			<% end %>
+		</div>
+	</div>
+</div>
+<div class="sauces-container">
+	<div class="row">
+		<div class="large-6 columns">
+			<div class="title">Select Sauces to Find:</div>
+			<% @salsas.each do |salsa| %>
+				<div>
+					<input type="checkbox" name=<%= salsa.name %> value=<%= salsa.name %>><label for="pokemonRed"><%= salsa.name %></label>
+				</div>
+			<% end %>
+		</div>
+	</div>
+</div>
