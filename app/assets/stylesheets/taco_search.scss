@@ -3,9 +3,15 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .tacos-container, .sauces-container {
-	margin: 20px 0px;
 	.title {
 		margin-bottom: 10px;
 		font-size: 20px;
 	}
+	.tacos-section, .sauces-section {
+		margin: 10px 0px;
+	}
+}
+
+.sauces-container input.search {
+	margin-top: 15px;
 }

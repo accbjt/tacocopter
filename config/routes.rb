@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   resources :questions
   resources :coding_challenge, only: [:index]
   resources :taco_search
+  post 'search' => 'taco_search#search'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
