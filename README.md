@@ -17,3 +17,4 @@ Slides are <a href=https://docs.google.com/presentation/d/1Y3gWwABlmSjAeZrBflAhU
 
 Written in Ruby on Rails. If you'd like to contribute, just open an issue or open a pull request and notify Brad Urani.
 
+https://the-great-taco-hunt.herokuapp.com/ | https://git.heroku.com/the-great-taco-hunt.git

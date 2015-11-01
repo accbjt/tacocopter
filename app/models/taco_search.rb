@@ -10,7 +10,6 @@ class TacoSearch < ActiveRecord::Base
   end
 
   def self.get_all_data(query)
-  	
   	records = ActiveRecord::Base.connection.execute(query)
 
   	records.map do |record|
