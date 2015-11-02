@@ -1,15 +1,15 @@
 class TacoSearch < ActiveRecord::Base
   def self.tacos
   	sql = "SELECT * from tacos"
-  	get_all_data(sql)
+  	get_data(sql)
   end
 
   def self.salsas
   	sql = "SELECT * from salsas"
-  	get_all_data(sql)
+  	get_data(sql)
   end
 
-  def self.get_all_data(query)
+  def self.get_data(query)
   	records = ActiveRecord::Base.connection.execute(query)
 
   	records.map do |record|
@@ -34,7 +34,7 @@ class TacoSearch < ActiveRecord::Base
 					 GROUP BY store_id
 					 HAVING COUNT(store_id) = '+category.count.to_s
 
-		store_id_array = get_all_data(sql).map(&:store_id)
+		store_id_array = get_data(sql).map(&:store_id)
 
 		store_id_array.any? ? self.store_city_query(store_id_array) : store_id_array
   end
@@ -54,7 +54,7 @@ class TacoSearch < ActiveRecord::Base
 					 HAVING COUNT(store_id) = '+salsas.count.to_s+') t2
 					 ON t1.store_id = t2.store_id'
 
-		store_id_array = get_all_data(sql).map(&:store_id)
+		store_id_array = get_data(sql).map(&:store_id)
 
 		store_id_array.any? ? self.store_city_query(store_id_array) : store_id_array
   end
@@ -65,6 +65,6 @@ class TacoSearch < ActiveRecord::Base
            INNER JOIN cities t2 on t1.city_id = t2.id 
            WHERE t1.id in ('+stores.join(",")+')'
 
-    get_all_data(sql)
+    get_data(sql)
   end
 end
